@@ -9,4 +9,7 @@ import { users } from './dummy-user';
 export class AppComponent {
   title = 'task-management-app';
   userList = users;
+  onselectUser(id: string){
+    console.log("User id selected is: ", id);
+  }
 }
