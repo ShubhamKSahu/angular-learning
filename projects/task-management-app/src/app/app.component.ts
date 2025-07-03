@@ -6,10 +6,18 @@ import { users } from './dummy-user';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'task-management-app';
   userList = users;
+  selectedId: string = '';
+
+  get selectedUser(){
+    return this.userList.find((user)=>{
+      return user.id === this.selectedId
+    })
+  }
   onselectUser(id: string){
-    console.log("User id selected is: ", id);
+    this.selectedId = id;
   }
 }
+
