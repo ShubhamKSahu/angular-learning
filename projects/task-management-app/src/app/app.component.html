@@ -1,21 +1,15 @@
 <app-header />
 <main>
     <ul id="user">
-        <li>
-            <app-user [user]="userList[0]" (select)="onselectUser($event)" />
-        </li>
-        <li>
-            <app-user [user]="userList[1]" (select)="onselectUser($event)" />
-        </li>
-        <li>
-            <app-user [user]="userList[2]" (select)="onselectUser($event)" />
-        </li>
-        <li>
-            <app-user [user]="userList[3]" (select)="onselectUser($event)" />
-        </li>
-        <li>
-            <app-user [user]="userList[4]" (select)="onselectUser($event)" />
-        </li>
+        <li *ngFor="let user of userList">
+            <app-user [user]="user" (select)="onselectUser($event)" />
+        </li> 
     </ul>
-    <app-tasks [username]="selectedUser?.name"></app-tasks>
+    
+    <app-tasks *ngIf="selectedUser else selectUser" 
+        [username]="selectedUser.name">
+    </app-tasks>
+    <ng-template #selectUser>
+        <p>Please select a user.</p>
+    </ng-template>
 </main>
