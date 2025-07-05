@@ -58,5 +58,9 @@ get selectedUsers(){
     return task.userId == this.userId;
   })
 }
-
+taskCompleted(id: string){
+  this.tasks=  this.tasks.filter((task)=>{
+    return task.id !== id;
+  })
+}
 }
