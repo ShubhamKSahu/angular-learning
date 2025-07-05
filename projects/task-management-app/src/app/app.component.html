@@ -7,9 +7,11 @@
     </ul>
     
     <app-tasks *ngIf="selectedUser else selectUser" 
-        [username]="selectedUser.name">
+        [username]="selectedUser.name" 
+        [userId]="selectedUser.id"
+    >
     </app-tasks>
     <ng-template #selectUser>
-        <p>Please select a user.</p>
+        <h2>Please select a user.</h2>
     </ng-template>
 </main>

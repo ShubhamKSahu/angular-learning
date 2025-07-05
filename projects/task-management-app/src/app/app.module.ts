@@ -5,10 +5,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { UserComponent } from './Components/user/user.component';
 import { TasksComponent } from './Components/tasks/tasks.component';
+import { TaskComponent } from './Components/tasks/task/task.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, UserComponent, TasksComponent
+    AppComponent, HeaderComponent, UserComponent, TasksComponent, TaskComponent
   ],
   imports: [
     BrowserModule
