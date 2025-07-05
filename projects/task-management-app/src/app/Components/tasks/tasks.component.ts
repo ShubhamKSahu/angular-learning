@@ -8,6 +8,7 @@ import { users } from 'src/app/dummy-user';
 export class TasksComponent {
 @Input({required: true}) userId !: string;
 @Input({required : true}) username?: string;
+isNewTaskClicked = false;
 tasks = [
   {
     id: 'task-1',
@@ -62,5 +63,12 @@ taskCompleted(id: string){
   this.tasks=  this.tasks.filter((task)=>{
     return task.id !== id;
   })
+}
+
+addNewTask(){
+  this.isNewTaskClicked = true;
+}
+onCancelNewTask(){
+  this.isNewTaskClicked = false;
 }
 }

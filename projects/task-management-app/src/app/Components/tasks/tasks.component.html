@@ -1,8 +1,11 @@
+<div *ngIf="isNewTaskClicked">
+        <app-newtask (cancel)="onCancelNewTask()"></app-newtask>
+    </div>
 <section id="tasks">
     <header>
         <h2>{{username}}'s Tasks</h2>
         <menu>
-            <button>Add Task</button>
+            <button (click)="addNewTask()">Add Task</button>
         </menu>
     </header>
     <ul>
