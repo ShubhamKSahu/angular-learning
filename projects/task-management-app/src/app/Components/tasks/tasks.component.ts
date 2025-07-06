@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { users } from 'src/app/dummy-user';
+import { NewTask } from '../newtask/newtask.model';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -70,5 +71,15 @@ addNewTask(){
 }
 onCancelNewTask(){
   this.isNewTaskClicked = false;
+}
+createNewTask(newtask : NewTask){
+ this.tasks.push({
+  id : new Date().getTime().toString(),
+  title : newtask.title,
+  summary : newtask.summary,
+  dueDate : newtask.dueDate,
+  userId : this.userId
+ })
+ this.isNewTaskClicked = false;
 }
 }

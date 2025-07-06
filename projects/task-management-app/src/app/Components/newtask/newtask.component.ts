@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { NewTask } from './newtask.model';
 
 @Component({
   selector: 'app-newtask',
@@ -7,7 +8,17 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NewtaskComponent {
   @Output() cancel = new EventEmitter<void>();
+  @Output() create = new EventEmitter<NewTask>();
+  newTask: NewTask={
+    title : '',
+    summary : '',
+    dueDate : ''
+  };
 onCancelClick(){
   this.cancel.emit();
+}
+
+onCreateClick(){
+  this.create.emit(this.newTask);
 }
 }

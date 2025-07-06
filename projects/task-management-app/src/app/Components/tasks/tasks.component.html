@@ -1,5 +1,5 @@
 <div *ngIf="isNewTaskClicked">
-        <app-newtask (cancel)="onCancelNewTask()"></app-newtask>
+        <app-newtask (cancel)="onCancelNewTask()" (create)="createNewTask($event)"></app-newtask>
     </div>
 <section id="tasks">
     <header>
