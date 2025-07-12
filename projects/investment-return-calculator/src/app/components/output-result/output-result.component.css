@@ -1,0 +1,14 @@
+ table, td, th{
+    border: 1px solid black;
+    text-align: center;
+    border-collapse: collapse;
+    padding: 0.5rem;
+ }
+ table{
+    margin: auto;
+ }
+ p{
+    text-align: center;
+    font-size: large;
+    color: rgb(51, 84, 85);
+ }

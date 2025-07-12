@@ -1,6 +1,8 @@
 header {
   text-align: center;
   margin: 3rem auto;
+  margin-top: 0.5rem;
+  margin-bottom: auto;
 }
 
 header img {
@@ -8,6 +10,7 @@ header img {
   height: 5rem;
   object-fit: contain;
   background-color: transparent;
+  margin-top: 1rem;
 }
 
 header h1 {

@@ -8,11 +8,20 @@ import { InvestmentInput } from './components/user-input/user-input.model';
 })
 export class AppComponent {
   title = 'investment-return-calculator';
+  investmentResults : {
+    year: number,
+    interest: number,
+    valueEndOfYear: number,
+    annualInvestment: number,
+    totalInterest: number,
+    totalAmountInvested: number
+  }[] = [];
 
 calculateInvestmentResults(data: InvestmentInput) {
   const {initialInvestment, annualInvestment, expectedReturn, duration} = data;
   const annualData = [];
   let investmentValue = initialInvestment;
+  
 
   for (let i = 0; i < duration; i++) {
     const year = i + 1;
@@ -31,6 +40,6 @@ calculateInvestmentResults(data: InvestmentInput) {
   }
 
   //return annualData;
-  console.log(annualData); 
+  this.investmentResults = annualData;
 }
 }
